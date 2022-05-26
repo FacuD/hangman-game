@@ -1,0 +1,54 @@
+.hidden {
+  color: transparent;
+}
+
+body {
+  background-color: #415ea3;
+  color: white;
+  font-family: "SF Pixelate", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  margin-bottom: 90px;
+}
+
+#word-container {
+  margin-top: 50px;
+  margin-right: 20px;
+}
+
+.letter {
+  font-size: 1.5rem;
+  margin: 0 5px;
+  position: relative;
+  text-align: center;
+}
+
+.letter::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  min-width: 12px;
+}
+
+#start-button {
+  margin-top: 60px;
+  font-family: "SF Pixelate", sans-serif;
+  border: none;
+  width: 250px;
+  padding: 10px;
+  background: #d95d39;
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
