@@ -4,6 +4,7 @@ const $ = (el) => document.querySelector(el);
 const wordContainer = $("#word-container");
 const usedLettersContainer = $("#used-letters");
 const startButton = $("#start-button");
+const wordDisplay = $("#word-display");
 
 // Canvas Initialize
 let canvas = $("#canvas");
@@ -39,9 +40,18 @@ const wrongLetter = (letter) => {
   if (mistakes === hangmanBody.length) endGame();
 };
 
+const showWord = () => {
+  let word = document.createElement("span");
+  word.innerHTML = choosenWord.join("");
+  wordDisplay.innerText = "The word was: ";
+  wordDisplay.appendChild(word);
+};
+
 const endGame = () => {
   document.removeEventListener("keydown", handleKeyPress);
   startButton.style.display = "block";
+  startButton.innerHTML = "Play Again";
+  showWord();
 };
 
 const correctLetter = (letter) => {
@@ -107,6 +117,7 @@ const startGame = () => {
   mistakes = 0;
   hits = 0;
   wordContainer.innerHTML = "";
+  wordDisplay.innerHTML = "";
   usedLettersContainer.innerHTML = "";
   startButton.style.display = "none";
   drawGallow();
