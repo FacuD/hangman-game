@@ -86,9 +86,8 @@ const drawWord = () => {
   });
 };
 
-const chooseRandomWord = async () => {
-  let word = words[Math.floor(Math.random() * words.length)].toUpperCase();
-  choosenWord = word.split("");
+const separateWord = (word) => {
+  choosenWord = word.toUpperCase().split("");
 };
 
 const drawGallow = () => {
@@ -111,8 +110,7 @@ const startGame = () => {
   usedLettersContainer.innerHTML = "";
   startButton.style.display = "none";
   drawGallow();
-  chooseRandomWord();
-  drawWord();
+  fetchRandomWord().then(separateWord).then(drawWord);
   document.addEventListener("keydown", handleKeyPress);
 };
 
