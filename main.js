@@ -1,5 +1,3 @@
-const $ = (el) => document.querySelector(el);
-
 // Constants
 const wordContainer = $("#word-container");
 const usedLettersContainer = $("#used-letters");
